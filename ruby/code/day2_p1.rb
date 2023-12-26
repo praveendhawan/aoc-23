@@ -46,7 +46,7 @@ class GameParser
   private
 
   def extract_game_id
-  @game_id = @game_string.match(GAME_ID_REGEX)[1].to_i
+    @game_id = @game_string.match(GAME_ID_REGEX)[1].to_i
   end
 
   def parse_sets
