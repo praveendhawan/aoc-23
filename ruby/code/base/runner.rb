@@ -1,12 +1,20 @@
-# Runner class
-class Runner
-  def initialize(file_path, solver_class_name = '', solver_method_name = '')
-    @file_path = file_path
-    @solver_class = Object.const_get(solver_class_name)
-    @solver_method_name = solver_method_name
-  end
+# frozen_string_literal: true
 
-  def run
-    @solver_class.new(@file_path).send(@solver_method_name)
+module Base
+  # Runner class
+  class Runner
+    def initialize(file_path)
+      @file_path = file_path
+    end
+
+    def run
+      raise 'Not implemented'
+    end
+
+    private
+
+    def input
+      @input ||= File.read(@file_path)
+    end
   end
 end
